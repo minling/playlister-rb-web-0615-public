@@ -15,6 +15,7 @@ describe "Genre" do
     3.times do
       song = Song.new
       song.genre = genre
+
     end
     expect(genre.songs.count).to eq(3)
   end
@@ -28,7 +29,7 @@ describe "Genre" do
       song = Song.new.tap { |s| s.genre = genre }
       artist.add_song(song)
     end
-
+    # binding.pry
     expect(genre.artists.count).to eq(2)
   end
 
@@ -39,6 +40,7 @@ describe "Genre" do
     [1,2].each do
       song = Song.new
       song.genre = genre
+      # binding.pry
       artist.add_song(song)
     end
     expect(genre.artists.count).to eq(1)
